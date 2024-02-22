@@ -1,0 +1,22 @@
+
+   <mat-form-field>
+      <mat-label >Vpiši ime</mat-label>
+      <input [(ngModel)]='ime_form' matInput class="ime"  >
+   </mat-form-field>
+   <mat-form-field>
+      <mat-label >Vpiši priimek</mat-label>
+      <input id="priimek" [(ngModel)]='priimek_form' matInput class="priimek">
+   </mat-form-field>
+   <mat-form-field>
+      <mat-label>Datum rojstva</mat-label>
+      <input id="datum_rojstva" [(ngModel)]='datum_rojstva_form' matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+   </mat-form-field>
+   <mat-checkbox id="aktiven" [(ngModel)]='aktiven_form'>Aktiven</mat-checkbox> 
+   <mat-form-field>
+      <mat-label>Opis</mat-label>
+      <textarea id="opis" [(ngModel)]='opis_form' matInput></textarea>
+   </mat-form-field>
+   <button mat-raised-button type="submit" (click)="onSubmit()" color="primary">Submit</button>
